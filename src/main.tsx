@@ -5,7 +5,6 @@ import { RouterProvider } from 'react-router-dom'
 import { store } from '@/app/store'
 import { router } from '@/app/router'
 import { fetchCurrentUser } from '@/features/auth/authSlice'
-import { DeviceAccessProvider } from '@/providers/DeviceAccessProvider'
 import '@/styles/globals.css'
 
 // A stored token survives a reload, but the `user` object doesn't — route

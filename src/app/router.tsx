@@ -9,9 +9,7 @@ import { RootLayout } from '@/layouts/RootLayout'
 import type { RouteHandle } from '@/types/route'
 import { PrivateRoute } from './guards/PrivateRoute'
 import { PublicOnlyRoute } from './guards/PublicOnlyRoute'
-import { AdminRoute } from './guards/AdminRoute'
 import { AdminPublicOnlyRoute } from './guards/AdminPublicOnlyRoute'
-import AdminLayout from '@/layouts/AdminLayout'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const LoginPage = lazy(() => import('@/pages/LoginPage'))
@@ -26,8 +24,6 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 const MileStonesPage = lazy(() => import('@/pages/MileStones'))
 const MarketingPage = lazy(() => import('@/pages/Marketing'))
 const AdminLoginPage = lazy(() => import('@/pages/AdminLoginPage'))
-const AdminPage = lazy(() => import('@/pages/AdminPage'))
-const DevicesPage = lazy(() => import('@/pages/Devices'))
 
 function withSuspense(node: ReactNode) {
   return <Suspense fallback={<PageLoader />}>{node}</Suspense>
