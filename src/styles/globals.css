@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/**
+ * Design tokens — light theme (default).
+ * Switch themes at runtime by setting `data-theme="dark"` on <html>;
+ * every token below cascades instantly since Tailwind utilities read
+ * these CSS variables rather than hard-coded values. See useTheme().
+ */
+:root {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #0891b2;
+  --color-success: #059669;
+  --color-danger: #dc2626;
+  --color-warning: #d97706;
+
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-2: 0 12px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--color-border);
+  --shadow-focus-glow: 0 0 0 3px rgba(124, 58, 237, 0.35);
+}
+
+/** Design tokens — dark theme. */
+:root[data-theme='dark'] {
+  --color-background: #090a0f;
+  --color-surface: #131620;
+  --color-border: #1e2235;
+
+  --color-primary: #7c3aed;
+  --color-primary-hover: #8b5cf6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #06b6d4;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-elevation-2: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--color-border);
+  --shadow-focus-glow: 0 0 0 3px rgba(124, 58, 237, 0.45);
+}
+
+/* Wire the tokens into Tailwind's theme so utilities like bg-primary,
+   text-text-muted, border-border, rounded-md, etc. read the variables above. */
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-foreground: var(--color-primary-foreground);
+
+  --color-secondary: var(--color-secondary);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
+  --color-warning: var(--color-warning);
+
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+  }
+}

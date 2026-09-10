@@ -1,0 +1,23 @@
+/** Central route path registry — import these instead of hard-coding strings. */
+export const ROUTE_PATHS = {
+  HOME: '/',
+  LOGIN: '/login',
+  OAUTH_CALLBACK: '/auth/callback/:provider',
+  MAGIC_LINK_VERIFY: '/auth/verify',
+  ONBOARDING: '/onboarding',
+  PROFILE_ONBOARDING: '/onboarding/profile',
+  NEW_IDEA_WIZARD: '/onboarding/new-idea',
+  DASHBOARD: '/dashboard',
+  ROAD_MAP: '/dashboard/roadmap',
+  MILESTONES: '/dashboard/milestones',
+  MARKETING: '/dashboard/marketing',
+  CALENDAR: '/dashboard/calendar',
+  DOCUMENTS: '/dashboard/documents',
+  PITCH_DECKS: '/dashboard/pitch-decks',
+  WEBSITE: '/dashboard/website',
+  LOGOS: '/dashboard/logos',
+  MESSAGING: '/dashboard/messaging',
+  ADMIN: '/admin',
+  ADMIN_LOGIN: '/admin/login',
+  DEVICES: '/admin/devices',
+} as const
