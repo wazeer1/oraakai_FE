@@ -48,29 +48,29 @@ const routes: RouteObject[] = [
         element: withSuspense(<HomePage />),
         handle: { title: 'Home', requiresAuth: false } satisfies RouteHandle,
       },
-      {
-        // Entirely separate admin login (features/admin/adminAuth.ts) —
-        // NOT the regular user auth/PrivateRoute below.
-        element: <AdminRoute />,
-        children: [
-          {
-            path: ROUTE_PATHS.ADMIN,
-            element: <AdminLayout />,
-            children: [
-              {
-                index: true,
-                element: withSuspense(<AdminPage />),
-                handle: { title: 'Admin', requiresAuth: true } satisfies RouteHandle,
-              },
-              {
-                path: ROUTE_PATHS.DEVICES,
-                element: withSuspense(<DevicesPage />),
-                handle: { title: 'Devices', requiresAuth: true } satisfies RouteHandle,
-              }
-            ],
-          },
-        ],
-      },
+      // {
+      //   // Entirely separate admin login (features/admin/adminAuth.ts) —
+      //   // NOT the regular user auth/PrivateRoute below.
+      //   element: <AdminRoute />,
+      //   children: [
+      //     {
+      //       path: ROUTE_PATHS.ADMIN,
+      //       element: <AdminLayout />,
+      //       children: [
+      //         {
+      //           index: true,
+      //           element: withSuspense(<AdminPage />),
+      //           handle: { title: 'Admin', requiresAuth: true } satisfies RouteHandle,
+      //         },
+      //         {
+      //           path: ROUTE_PATHS.DEVICES,
+      //           element: withSuspense(<DevicesPage />),
+      //           handle: { title: 'Devices', requiresAuth: true } satisfies RouteHandle,
+      //         }
+      //       ],
+      //     },
+      //   ],
+      // },
       {
         element: <AuthLayout />,
         children: [
